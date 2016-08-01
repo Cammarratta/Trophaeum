@@ -1,0 +1,35 @@
+<div class="row">
+<div class="large-12 columns">
+
+<div data-alert ng-show="msg" class="alert-box">{{msg}}</div>
+
+<!--Show appointment-->
+	<h3>Your Schedule ({{appointments.length}})</h3>
+	<table>
+		<thead>
+			<tr>
+				<th width="20%">Name</th>
+				<th width="10%">Date</th>
+				<th width="10%">Start Time</th>
+				<th width="10%">End Time</th>
+				<th max-width="20%">Reason</th>
+				<th width="19%">Modify</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="appointment in appointments">
+				<td><a href="#/edit/{{appointment.$id}}" ng-click="showAppointment(appointment)">{{appointment.name}}</td>
+				<td>{{appointment.date | date: "shortDate" : "-0600" }}</td>
+				<td>{{appointment.start_time| date: "shortTime" : "-0600"}}</td>
+				<td>{{appointment.end_time| date: "shortTime" : "-0600"}}</td>
+				<td>{{appointment.reason}}</td>
+				<td><a href="#/edit/{{appointment.$id}}" class="button tiny" ng-click="showEditForm(appointment)">Edit</a>
+				<a class="button tiny alert" ng-click="removeAppointment(appointment)">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="small-12 large-2 columns">
+	<a href="#/edit/" class="button large" data-toggle="tooltip"  title="Add New Appointment" ng-click="showEditAddForm()" ng-hide="addFormShow">Add</a>
+</div>
+</div>

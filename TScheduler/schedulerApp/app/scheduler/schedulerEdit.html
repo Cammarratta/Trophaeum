@@ -1,0 +1,102 @@
+<div class="row">
+<div class="large-10 columns">
+
+<div data-alert ng-show="msg" class="alert-box">{{msg}}</div>
+
+<!--Add Contact Form-->
+<form ng-submit="addFormSubmit()" ng-show="!editForm">
+  		<h3>Add Appointment</h3>
+  		<!-- Add Form -->
+  		<div class="row">
+		    <div class="large-6 columns">
+		      <label>Name:
+		        <input type="text" ng-model="name" placeholder="Appointment Name" required />
+		      </label>
+		    </div>
+		    <div class="large-6 columns">
+		      <label>Date:
+		        <input type="date" ng-model="date" placeholder="Appointment Date" required />
+		      </label>
+		    </div>
+		 </div>
+
+		 <div class="row">
+		    <div class="large-6 columns">
+		      <label>Start Time:
+		        <input type="time" ng-model="start" placeholder="Start Date" required />
+		      </label>
+		    </div>
+		    <div class="large-6 columns">
+		      <label>End Time:
+		        <input type="time" ng-model="end" placeholder="End Date" required />
+		      </label>
+		    </div>
+		 </div>
+
+		 <div class="row">
+		    <div class="large-12 columns">
+		      <label>Reason:
+		        <textarea rows="10" maxlength="500" ng-model="reason" placeholder="Appointment Reason"></textarea>
+		      </label>
+		    </div>
+		 </div>		 
+
+		    
+		 <div class="row">
+		    <div class="large-12 columns">
+		        <input type="submit" value="Add Appointment" class="button" />
+		    </div>
+		 </div>
+	</form>
+
+<!--Edit Contact Form-->
+<form ng-submit="editFormSubmit()" ng-show="editForm">
+  		<h3>Edit Appointment</h3>
+  		<!-- Add Form -->
+  		<div class="row">
+		    <div class="large-6 columns">
+		      <label>Name:
+		        <input type="text" ng-model="name" placeholder="Appointment Name" required />
+		      </label>
+		    </div>
+		    <div class="large-6 columns">
+		      <label>Date:
+		        <input type="date" ng-model="date" placeholder="Appointment Date" required />
+		      </label>
+		    </div>
+		 </div>
+
+		 <div class="row">
+		    <div class="large-6 columns">
+		      <label>Start Time:
+		        <input type="time" ng-model="start" placeholder="Start Date" required />
+		      </label>
+		    </div>
+		    <div class="large-6 columns">
+		      <label>End Time:
+		        <input type="time" ng-model="end" placeholder="End Date" required />
+		      </label>
+		    </div>
+		 </div>
+
+		 <div class="row">
+		    <div class="large-12 columns">
+		      <label>Reason:
+		        <textarea rows="10" maxlength="500" ng-model="reason" placeholder="Appointment Reason"></textarea>
+		      </label>
+		    </div>
+		 </div>		 
+
+		    
+		 <div class="row">
+		    <div class="large-12 columns">
+		        <input type="submit" value="Update Appointment" class="button" />
+		    </div>
+		 </div>
+	</form>
+  		
+</div>
+<div class="small-12 large-2 columns">
+	<a href="#/scheduler" data-toggle="tooltip" title="Return" class="button large" ng-click="showAddForm()" ng-hide="addFormShow">Return</a>
+</div>
+</div>
